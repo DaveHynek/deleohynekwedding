@@ -1,0 +1,67 @@
+<div class="guest-info-container">
+  <div class="input-fields">
+    <label>First Name:</label>
+    <input type="text" [(ngModel)]="guest.firstName" />
+  </div>
+  <div class="input-fields">
+    <label>Last Name:</label>
+    <input type="text" [(ngModel)]="guest.lastName" />
+  </div>
+  <!--<div class="input-fields">
+    <label>Email:</label>
+    <input type="text" [(ngModel)]="guest.email" />
+  </div>-->
+  <div class="input-fields">
+    <label>Attending:</label>
+    <div>
+      <input type="radio" name="{{guest.id}}attending" [(ngModel)]="guest.responseInfo.attending" [value]="true" />
+      <label>Yes</label>
+      <input type="radio" name="{{guest.id}}attending" [(ngModel)]="guest.responseInfo.attending" [value]="false" />
+      <label>No</label>
+    </div>
+  </div>
+  <div class="input-fields">
+    <label>Song You'd Dance To:</label>
+    <input type="text" [(ngModel)]="guest.responseInfo.songRequest" />
+  </div>
+  <br />
+  <div>
+    <label class="category-label">What sounds tasty?</label>
+    <br /><div class="extra-info">This is not an order/commitment.</div>
+  </div>
+  <div class="input-fields">
+    <label>BBQ:
+      <br /><a href="https://www.oakmontbbqco.com/menu" target="_blank">(see full menu)</a>
+    </label>
+    <div class="menu-options">
+      <div *ngFor="let item of menu | filtermenu:'Oakmont BBQ'">
+        <input type="radio" name="{{guest.id}}-oakmont" [(ngModel)]="guest.responseInfo.oakmontBBQSelection" [value]="item.name" />
+        <label>{{item.name}}</label>
+      </div>
+      <div>
+        <input type="radio" name="{{guest.id}}-oakmont" [(ngModel)]="guest.responseInfo.oakmontBBQSelection" [value]="'No thanks'" />
+        <label>No thanks</label>
+      </div>
+    </div>
+  </div>
+  <div class="input-fields">
+    <label>Wrap/Salad:
+      <br /><a href="https://www.choppedsaladshop.com/food-truck.html" target="_blank">(see full menu)</a>
+    </label>
+    <div class="menu-options">
+      <div *ngFor="let item of menu | filtermenu:'Chop Shop'">
+        <input type="radio" name="{{guest.id}}-chop" [(ngModel)]="guest.responseInfo.chopShopSelection" [value]="item.name" />
+        <label>{{item.name}}</label>
+      </div>
+      <div>
+        <input type="radio" name="{{guest.id}}-chop" [(ngModel)]="guest.responseInfo.chopShopSelection" [value]="'No thanks'" />
+        <label>No thanks</label>
+      </div>
+    </div>
+  </div>
+  <div class="input-fields">
+    <label>Dietary Restrictions:</label>
+    <input type="text" [(ngModel)]="guest.responseInfo.dietaryRestrictions" />
+  </div>
+  <ng-content></ng-content>
+</div>

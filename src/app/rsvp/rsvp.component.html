@@ -1,0 +1,53 @@
+<div class="rsvp-container">
+  <div class="rsvp-code">
+    <div *ngIf="!invite && !rsvpComplete">
+      <label>Enter your RSVP code:</label>
+      <input [(ngModel)]="inviteCode" placeholder="Type your code here" (keyup.enter)="getInvitation()" />
+      <br />
+      <button class="code-button" (click)="getInvitation()">Submit</button>
+    </div>
+    <div *ngIf="showError">
+      <br />
+      <label>Your invitation could not be found.</label>
+    </div>
+    <div *ngIf="rsvpComplete">
+      <div *ngIf="rsvpAccepted">
+        <label>
+          Thank you for your reply!
+          <br />
+          If your status changes, please come back and update your submission.
+        </label>
+      </div>
+      <div *ngIf="!rsvpAccepted">
+        <label>
+          An error occurred processing your RSVP.
+          <br />
+          Please try again later.
+        </label>
+      </div>
+    </div>
+    <div *ngIf="invite">
+      <fieldset>
+        <legend align="left">Will You Join Us?</legend>
+        <div>
+          <input type="radio" name="inviteRsvp" [(ngModel)]="invite.attending" [value]="true" />
+          <label>Ready to party in Pittsburgh!</label>
+        </div>
+        <div>
+          <input type="radio" name="inviteRsvp" [(ngModel)]="invite.attending" [value]="false" />
+          <label>Sending best wishes from home.</label>
+        </div>
+      </fieldset>
+      <div *ngIf="invite.attending">
+        <br />
+        <fieldset>
+          <legend align="left">Guest Information</legend>
+          <app-guest-info *ngFor="let guest of invite.guests; last as isLast" [guest]="guest" [menu]="menu">
+            <hr *ngIf="!isLast" />
+          </app-guest-info>
+        </fieldset>
+      </div>
+      <button *ngIf="invite.attending != undefined" class="code-button" (click)="saveInvitation()">RSVP</button>
+    </div>
+  </div>
+</div>

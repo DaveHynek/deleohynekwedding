@@ -1,0 +1,12 @@
+.std-bg {
+  background-image: url(../../assets/savethedate.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  background-position: top;
+  height: -moz-calc(100% - 40px);
+  height: -webkit-calc(100% - 40px);
+  height: calc(100% - 40px);
+  width: 100%;
+  transform: scale(.95)
+}

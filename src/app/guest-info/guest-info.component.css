@@ -1,0 +1,36 @@
+.guest-info-container {
+  margin-bottom: 10px;
+}
+
+.input-fields {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding-bottom: 3px;
+}
+
+.menu-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.extra-info {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.category-label{
+  text-decoration: underline;
+}
+
+a {
+  color: white;
+}
+
+label {
+  margin-right: 8px;
+}
+
+hr {
+  border-color: rgb(0, 178, 209);
+}

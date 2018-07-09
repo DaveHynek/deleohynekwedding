@@ -1,0 +1,13 @@
+<nav>
+  <!--<a routerLink="/savethedate" routerLinkActive="active">Save-the-Date</a>-->
+  <a routerLink="/thebigday" routerLinkActive="active">The Big Day</a>
+  <a routerLink="/rsvp" routerLinkActive="active">RSVP</a>
+  <a routerLink="/info" routerLinkActive="active">Info</a>
+  <a routerLink="/registry" routerLinkActive="active">Registry</a>
+</nav>
+<main class="app-container" [@routerTransition]="getState(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
+<!--<div class="app-container">
+  <app-save-the-date></app-save-the-date>
+</div>-->

@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:500);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-top: 5px;
+}
+
+main {
+  padding-top: 5px;
+}
+
+nav {
+  font-family: "Ubuntu";
+  font-size: 22px;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  margin-right: 2px;
+}
+  a:link,
+  a:visited {
+    border: none;
+    color: rgb(0, 178, 209);
+    text-decoration: none;
+  }
+  a.active {
+    border-bottom: 2px solid rgb(0, 178, 209);
+  }
